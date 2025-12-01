@@ -1,0 +1,20 @@
+rm -f build/*.o
+mkdir -p build
+gcc -std=c99 -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -Wall -Wextra -Werror -Wno-unused-parameter -fno-asm -Iinclude -c src/background.c -o build/background.o
+gcc -std=c99 -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -Wall -Wextra -Werror -Wno-unused-parameter -fno-asm -Iinclude -c src/commandexec.c -o build/commandexec.o
+gcc -std=c99 -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -Wall -Wextra -Werror -Wno-unused-parameter -fno-asm -Iinclude -c src/hop.c -o build/hop.o
+gcc -std=c99 -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -Wall -Wextra -Werror -Wno-unused-parameter -fno-asm -Iinclude -c src/logs.c -o build/logs.o
+gcc -std=c99 -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -Wall -Wextra -Werror -Wno-unused-parameter -fno-asm -Iinclude -c src/main.c -o build/main.o
+gcc -std=c99 -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -Wall -Wextra -Werror -Wno-unused-parameter -fno-asm -Iinclude -c src/parser.c -o build/parser.o
+gcc -std=c99 -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -Wall -Wextra -Werror -Wno-unused-parameter -fno-asm -Iinclude -c src/pipe.c -o build/pipe.o
+In file included from src/pipe.c:1:
+include/pipe.h:4:18: error: unknown type name 'Token'
+    4 | void handle_pipe(Token *tokens, int numofTokens);
+      |                  ^~~~~
+make: *** [Makefile:28: build/pipe.o] Error 1
+gcc -std=c99 -D_POSIX_C_SOURCE=200809L -D_XOPEN_SOURCE=700 -Wall -Wextra -Werror -Wno-unused-parameter -fno-asm -Iinclude -c src/pipe.c -o build/pipe.o
+In file included from src/pipe.c:1:
+include/pipe.h:4:18: error: unknown type name 'Token'
+    4 | void handle_pipe(Token *tokens, int numofTokens);
+      |                  ^~~~~
+make: *** [Makefile:28: build/pipe.o] Error 1
