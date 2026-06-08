@@ -16,7 +16,7 @@ void home_hop()
     }
     if (chdir(home) != 0)
     {
-        perror("hop");
+        fprintf(stderr, "No such directory!\n");
         return;
     }
     strcpy(prev_dir, current_dir);
@@ -36,7 +36,7 @@ void parent_hop()
 
     if (chdir("..") != 0)
     {
-        perror("hop");
+        fprintf(stderr, "No such directory!\n");
         return;
     }
     strcpy(prev_dir, current_dir);
@@ -62,7 +62,7 @@ void prev_hop()
 
     if (chdir(prev_dir) != 0)
     {
-        perror("hop");
+        fprintf(stderr, "No such directory!\n");
         return;
     }
 
@@ -83,7 +83,7 @@ void path_hop(char *arg)
 
     if (chdir(arg) != 0)
     {
-        perror("hop");
+        fprintf(stderr, "No such directory!\n");
         return;
     }
 

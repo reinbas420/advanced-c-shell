@@ -8,7 +8,7 @@
 static int read_logs_from_file(char *lines[], int max_lines)
 {
     char log_path[PATH_MAX];
-    snprintf(log_path, sizeof(log_path), "%s/src/logs.txt", initial_dir);
+    snprintf(log_path, sizeof(log_path), "logs.txt");
     FILE *log_file = fopen(log_path, "r");
     if (log_file == NULL)
     {
@@ -39,7 +39,7 @@ static int read_logs_from_file(char *lines[], int max_lines)
 void print_all_logs()
 {
     char log_path[PATH_MAX];
-    snprintf(log_path, sizeof(log_path), "%s/src/logs.txt", initial_dir);
+    snprintf(log_path, sizeof(log_path), "logs.txt");
     FILE *log_file = fopen(log_path, "r");
     if (log_file == NULL)
     {
@@ -57,7 +57,7 @@ void print_all_logs()
 void add_log(char *input)
 {
     char log_path[PATH_MAX];
-    snprintf(log_path, sizeof(log_path), "%s/src/logs.txt", initial_dir);
+    snprintf(log_path, sizeof(log_path), "logs.txt");
 
     char clean_input[MAX_CMD_LENGTH];
     strcpy(clean_input, input);

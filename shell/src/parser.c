@@ -106,7 +106,7 @@ bool parse_shell_cmd(Token *tokens,int numofTokens)
 
         if (tokenpos >= numTokens)
         {
-            printf("Invalid Syntax: Expected command after '%s'\n", tokens[tokenpos - 1].text);
+            printf("Invalid Syntax!\n");
             return false;
         }
         if(!parse_cmd_group(tokens)) return false; // next cmd
@@ -116,7 +116,7 @@ bool parse_shell_cmd(Token *tokens,int numofTokens)
         tokenpos++;
     }
     if (tokenpos != numTokens) {
-        printf("Invalid Syntax: Unexpected token '%s'\n", tokens[tokenpos].text);
+        printf("Invalid Syntax!\n");
         return false;
     }
     return true;
@@ -130,7 +130,7 @@ bool parse_cmd_group(Token *tokens)
         tokenpos++;
         if (tokenpos >= numTokens || tokens[tokenpos].type == tok_end)
         {
-            printf("Invalid Syntax: Expected command after '|'\n");
+            printf("Invalid Syntax!\n");
             return false;
         }
         if(!parse_atomic(tokens))return false;
@@ -163,7 +163,7 @@ bool parse_atomic(Token *tokens)
     }
     else
     {
-        printf("Invalid Syntax !\n");
+        printf("Invalid Syntax!\n");
         return false;
     }
     return true;
@@ -177,7 +177,7 @@ bool parse_name(Token *tokens)
     }
     else
     {
-        printf("Invalid Syntax !\n");
+        printf("Invalid Syntax!\n");
         return false;
     }
     return true;

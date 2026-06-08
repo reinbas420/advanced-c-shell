@@ -33,7 +33,7 @@ int main()
             perror("getcwd() error");
             return 1;
         }
-        printf("<mohan@iiit ~%s>:$", cwd);
+        printf("<mohan@iiit:~%s> ", cwd);
         if (!fgets(input, sizeof(input), stdin))
         {
             printf("\n"); // Handle Ctrl+D

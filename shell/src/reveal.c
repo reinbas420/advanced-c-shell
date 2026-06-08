@@ -12,7 +12,7 @@ void reveal_user(char *path, size_t buffer_size)
     dir = opendir(path);
     if (dir == NULL)
     {
-        perror("reveal: opendir");
+        fprintf(stderr, "No such directory!\n");
         return;
     }
     char *file_names[buffer_size];
@@ -43,7 +43,7 @@ void reveal_only_a(char *path, size_t buffer_size)
     dir = opendir(path);
     if (dir == NULL)
     {
-        perror("reveal: opendir");
+        fprintf(stderr, "No such directory!\n");
         return;
     }
     char *file_names[buffer_size];
@@ -71,7 +71,7 @@ void reveal_only_l(char *path, size_t buffer_size)
     dir = opendir(path);
     if (dir == NULL)
     {
-        perror("reveal: opendir");
+        fprintf(stderr, "No such directory!\n");
         return;
     }
     char *file_names[buffer_size];
@@ -101,7 +101,7 @@ void reveal_both(char *path, size_t buffer_size)
     dir = opendir(path);
     if (dir == NULL)
     {
-        perror("reveal: opendir");
+        fprintf(stderr, "No such directory!\n");
         return;
     }
     char *file_names[buffer_size];
@@ -146,7 +146,7 @@ void handle_reveal(Token *tokens, int numofTokens, size_t buffer_size)
         }
         else if (target != NULL)
         {
-            fprintf(stderr, "reveal: Too many arguments\n");
+            fprintf(stderr, "reveal: Invalid Syntax!\n");
             return;
         }
         else

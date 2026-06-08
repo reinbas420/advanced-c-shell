@@ -1,7 +1,6 @@
 #include "commandexec.h"
 #define buffer 500
 
-
 void execute_simple_command(Token *tokens, int numTokens)
 {
     if (numTokens == 0)
@@ -125,7 +124,7 @@ void run_command_internal(Token *tokens, int numTokens)
     if (argc > 0)
     {
         execvp(argv[0], argv);
-        perror(argv[0]); // execvp only returns on error
+        fprintf(stderr, "Command not found!\n"); // execvp only returns on error
         exit(EXIT_FAILURE);
     }
     else
